@@ -45,10 +45,8 @@ class MainApp extends StatelessWidget {
         'login': (context) => login(),
         'registrar' : (context) => registrar(),
         'PrincipalView':(context) => PrincipalView(),
-       // 'cadastro':(context) => cadastro(userRepository: userRepository),
         'navBar': (context) => navBar(),
         'sobre':(context) => sobre(),
-       // 'buscar':(context) => buscaItem(listaDeComprasRepository: listaDeComprasRepository),
       },
     );
   }

@@ -5,6 +5,7 @@ import 'package:zoiao/view/PrincipalView.dart';
 import 'package:zoiao/view/buscar.dart';
 import 'package:zoiao/view/cadastrarCliente.dart';
 import 'package:zoiao/view/cadastrarOculos.dart';
+import 'package:zoiao/view/opcoes.dart';
 
 class navBar extends StatefulWidget {
   const navBar({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _navBarState extends State<navBar> {
     cadastrarCliente(), // Cadastrar cliente
     cadastrarOculos(), // Cadastrar Oculos
     BuscaPage(), // PAgina de Buscar
-    //configurar(), // Pagina responsavel por configurar o usuario
+    opcoes(), // Pagina responsavel por configurar o usuario
   ];
 
   @override
