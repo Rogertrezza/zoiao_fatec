@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "415778807393",
+    "project_id": "zoiao-85aaa",
+    "storage_bucket": "zoiao-85aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415778807393:android:fd610a32b451d1f9b6d420",
+        "android_client_info": {
+          "package_name": "com.example.zoiao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqL-wpsDfQtuUS4QXm_0FqBReeXO0cLaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
