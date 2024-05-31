@@ -1,7 +1,5 @@
 import 'package:zoiao/model/busca.dart';
 
-import 'package:flutter/material.dart';
-
 // Firebase
 import 'package:cloud_firestore/cloud_firestore.dart';
 

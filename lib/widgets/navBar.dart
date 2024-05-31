@@ -22,7 +22,7 @@ class _navBarState extends State<navBar> {
     cadastrarCliente(), // Cadastrar cliente
     cadastrarOculos(), // Cadastrar Oculos
     BuscaPage(), // PAgina de Buscar
-    opcoes(), // Pagina responsavel por configurar o usuario
+    Opcoes(), // Pagina responsavel por configurar o usuario
   ];
 
   @override

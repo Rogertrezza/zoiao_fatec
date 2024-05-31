@@ -33,13 +33,6 @@ class _PrincipalViewState extends State<PrincipalView> {
         title: Text('Vendas'),
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            onPressed: () {
-              LoginController().logout(context);
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.exit_to_app),
-          )
         ],
       ),
 
@@ -98,8 +91,7 @@ class _PrincipalViewState extends State<PrincipalView> {
                                 onPressed: () {
                                   txtnota_fiscal.text = item['nota_fiscal'];
                                   txtcodigo_oculos.text = item['codigo_oculos'];
-                                  txtcodigo_cliente.text =
-                                      item['codigo_cliente'];
+                                  txtcodigo_cliente.text = item['codigo_cliente'];
                                   txtpreco_venda.text = item['preco_venda'];
                                   txtdata_venda.text = item['data_venda'];
                                   salvarVenda(context, docId: id);

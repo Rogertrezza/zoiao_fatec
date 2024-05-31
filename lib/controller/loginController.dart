@@ -10,7 +10,7 @@ class LoginController {
   // Adiciona a conta de um novo usuário no serviço
   // Firebase Authentication
   //
-  criarConta(context, nome, email, senha) {
+  criarConta(context, nome, email, senha, nome_empresa, telefone, cnpj) {
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(
       email: email,
@@ -27,6 +27,9 @@ class LoginController {
         .add(
           {
             "nome": nome,
+            "nome_empresa": nome_empresa,
+            "telefone": telefone,
+            "cnpj": cnpj,
             "uid": resultado.user!.uid,
           },
       );
@@ -100,4 +103,5 @@ class LoginController {
   idUsuario() {
     return FirebaseAuth.instance.currentUser!.uid;
   }
+
 }

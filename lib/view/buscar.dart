@@ -62,6 +62,7 @@ class _BuscaPageState extends State<BuscaPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Busca'),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: Icon(Icons.filter_list),
