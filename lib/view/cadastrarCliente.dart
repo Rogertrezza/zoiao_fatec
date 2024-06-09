@@ -20,6 +20,7 @@ class cadastrarCliente extends StatefulWidget {
 }
 
 class _cadastrarClienteState extends State<cadastrarCliente> {
+  
   var txtcliente_nome = TextEditingController();
   var txtcliente_telefone = TextEditingController();
   var txtcliente_rg = TextEditingController();
@@ -27,6 +28,63 @@ class _cadastrarClienteState extends State<cadastrarCliente> {
   var txtcliente_receita = TextEditingController();
   var txtcliente_data_receita = TextEditingController();
 
+// Função de validação para o campo Nome do Cliente
+String? validarNome(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Informe o nome do cliente.';
+  }
+  return null;
+}
+
+// Função de validação para o campo Telefone
+String? validarTelefone(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Informe o telefone do cliente.';
+  }
+  return null;
+}
+
+// Função de validação para o campo RG
+String? validarRg(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Informe o RG do cliente.';
+  }
+  return null;
+}
+
+// Função de validação para o campo Endereço
+String? validarEndereco(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Informe o endereço do cliente.';
+  }
+  return null;
+}
+
+// Função de validação para o campo Receita do Cliente
+String? validarReceita(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Informe a receita do cliente.';
+  }
+  return null;
+}
+
+// Função de validação para o campo Data da Receita
+String? validarDataReceita(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Informe a data da receita do cliente.';
+  }
+  return null;
+}
+
+// Função para validar todos os campos
+bool validarCampos() {
+  return validarNome(txtcliente_nome as String?) == null &&
+         validarTelefone(txtcliente_telefone as String?) == null &&
+         validarRg(txtcliente_rg as String?) == null &&
+         validarEndereco(txtcliente_endereco as String?) == null &&
+         validarReceita(txtcliente_receita as String?) == null &&
+         validarDataReceita(txtcliente_data_receita as String?) == null;
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -238,9 +296,8 @@ class _cadastrarClienteState extends State<cadastrarCliente> {
 
                 if (docId == null) {
                   //adicionar tarefa
-                  clienteController().adicionar(context, c);
+                      clienteController().adicionar(context, c);
                 } else {
-                  //atualizar tarefa
                   clienteController().atualizar(context, docId, c);
                 }
 
