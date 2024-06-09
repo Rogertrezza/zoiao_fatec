@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoiao/controller/loginController.dart';
 
 class login extends StatefulWidget {
-  login();
+  const login({super.key});
 
   @override
   State<login> createState() => _loginState();
@@ -65,7 +65,8 @@ class _loginState extends State<login> {
     return Scaffold(
       key: scaffoldKey, // Atribuição da scaffoldKey ao Scaffold
       appBar: AppBar(
-        title: Text("Tela de login"),
+        title: const Text("Tela de login"),
+        automaticallyImplyLeading: false,
       ),
       body: Material(
         color: Colors.white,
@@ -73,16 +74,16 @@ class _loginState extends State<login> {
           child: SafeArea(
             child: Column(
               children: [
-                Text(
+                const Text(
                   "Login",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Image.asset(
                     "lib/img/logo.png",
                     width: 200,
@@ -90,13 +91,13 @@ class _loginState extends State<login> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   child: TextField(
                     controller: emailLogin,
                     obscureText: passe_email ? true : false,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       label: Text("Email"),
                       prefixIcon: Icon(Icons.email),
@@ -104,14 +105,14 @@ class _loginState extends State<login> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   child: TextField(
                     controller: senhaLogin,
                     obscureText: passe_senha ? true : false,
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      label: Text("senha"),
-                      prefixIcon: Icon(Icons.lock),
+                      border: const OutlineInputBorder(),
+                      label: const Text("senha"),
+                      prefixIcon: const Icon(Icons.lock),
                       suffixIcon: InkWell(
                         onTap: () {
                           if (passe_senha == true) {
@@ -122,33 +123,34 @@ class _loginState extends State<login> {
                           setState(() {});
                         },
                         child: passe_senha
-                            ? Icon(Icons.remove_red_eye_outlined)
-                            : Icon(Icons.remove_red_eye_rounded),
+                            ? const Icon(Icons.remove_red_eye_outlined)
+                            : const Icon(Icons.remove_red_eye_rounded),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: SizedBox(
                     width: double.infinity,
                     child: Material(
-                      color: Color(0xFF7165d6),
+                      color: const Color(0xFF7165d6),
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
                         onTap: () {
                           // Chama o controller para adicionar usuario
                           var email = emailLogin.text;
                           var senha = senhaLogin.text;
-                          if (validarCampos(email, senha))
+                          if (validarCampos(email, senha)) {
                             LoginController().login(
                               context,
                               email,
                               senha,
                             );
+                          }
                         },
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 40),
                           child: Center(
@@ -174,18 +176,18 @@ class _loginState extends State<login> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Esqueceu a senha?"),
-                            content: Container(
+                            title: const Text("Esqueceu a senha?"),
+                            content: SizedBox(
                               height: 150,
                               child: Column(
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Identifique-se para receber um e-mail com as instruções e o link para criar uma nova senha.",
                                   ),
-                                  SizedBox(height: 25),
+                                  const SizedBox(height: 25),
                                   TextField(
                                     controller: emailLogin,
-                                    decoration: InputDecoration(
+                                    decoration: const InputDecoration(
                                       labelText: 'Email',
                                       prefixIcon: Icon(Icons.email),
                                       border: OutlineInputBorder(),
@@ -194,13 +196,13 @@ class _loginState extends State<login> {
                                 ],
                               ),
                             ),
-                            actionsPadding: EdgeInsets.all(20),
+                            actionsPadding: const EdgeInsets.all(20),
                             actions: [
                               TextButton(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text('cancelar'),
+                                child: const Text('cancelar'),
                               ),
                               ElevatedButton(
                                 onPressed: () {
@@ -211,21 +213,21 @@ class _loginState extends State<login> {
 
                                   Navigator.pop(context);
                                 },
-                                child: Text('enviar'),
+                                child: const Text('enviar'),
                               ),
                             ],
                           );
                         },
                       );
                     },
-                    child: Text('Esqueceu a senha?'),
+                    child: const Text('Esqueceu a senha?'),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Não possui uma conta?",
                       style: TextStyle(
                         fontSize: 16,
@@ -240,7 +242,7 @@ class _loginState extends State<login> {
                           'registrar',
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         "Criar conta",
                         style: TextStyle(
                             fontSize: 17,
@@ -248,14 +250,14 @@ class _loginState extends State<login> {
                             color: Color(0xFF7165D6)),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Saiba mais sobre o projeto",
                       style: TextStyle(
                         fontSize: 16,
@@ -270,7 +272,7 @@ class _loginState extends State<login> {
                           'sobre',
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         "Clique aqui",
                         style: TextStyle(
                             fontSize: 17,
@@ -278,7 +280,7 @@ class _loginState extends State<login> {
                             color: Color(0xFF7165D6)),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                   ],
                 ),
               ],

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoiao/controller/buscarController.dart';
 
 class BuscaPage extends StatefulWidget {
-  const BuscaPage({Key? key}) : super(key: key);
+  const BuscaPage({super.key});
 
   @override
   _BuscaPageState createState() => _BuscaPageState();
@@ -10,7 +10,7 @@ class BuscaPage extends StatefulWidget {
 
 class _BuscaPageState extends State<BuscaPage> {
   final BuscaController buscaController = BuscaController();
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   String _tipoBusca = 'oculos'; // Inicia com busca por óculos
 
   @override
@@ -35,7 +35,7 @@ class _BuscaPageState extends State<BuscaPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Selecionar tipo de busca'),
+          title: const Text('Selecionar tipo de busca'),
           content: DropdownButton<String>(
             value: _tipoBusca,
             onChanged: (value) {
@@ -61,10 +61,10 @@ class _BuscaPageState extends State<BuscaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Busca'),
+        title: const Text('Busca'),
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_list),
+            icon: const Icon(Icons.filter_list),
             onPressed: _showFilterDialog,
           ),
         ],
@@ -76,19 +76,19 @@ class _BuscaPageState extends State<BuscaPage> {
           children: [
             TextField(
               controller: _searchController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Pesquisar...',
                 suffixIcon: Icon(Icons.search),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: StreamBuilder<List<dynamic>>(
                 stream:
                     buscaController.buscar(_searchController.text, _tipoBusca),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   }
@@ -120,7 +120,7 @@ class _BuscaPageState extends State<BuscaPage> {
                             subtitle: Text(data['marca']),
                           );
                         default:
-                          return SizedBox.shrink();
+                          return const SizedBox.shrink();
                       }
                     },
                   );

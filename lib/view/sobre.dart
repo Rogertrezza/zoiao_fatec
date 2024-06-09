@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class sobre extends StatelessWidget {
+  const sobre({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sobre o Projeto'),
+        title: const Text('Sobre o Projeto'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 40),
+        padding: const EdgeInsets.only(top: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -78,7 +80,7 @@ class sobre extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: Material(
-                  color: Color(0xFF7165d6),
+                  color: const Color(0xFF7165d6),
                   borderRadius: BorderRadius.circular(10),
                   child: InkWell(
                     onTap: () {

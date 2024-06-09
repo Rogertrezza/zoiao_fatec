@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoiao/controller/loginController.dart';
 
 class registrar extends StatefulWidget {
-  registrar();
+  const registrar({super.key});
 
   @override
   State<registrar> createState() => _registrarState();
@@ -34,7 +34,7 @@ class _registrarState extends State<registrar> {
     return Scaffold(
       key: scaffoldKey, // Atribuição da scaffoldKey ao Scaffold
       appBar: AppBar(
-        title: Text("Registrar"),
+        title: const Text("Registrar"),
       ),
       body: Material(
         color: Colors.white,
@@ -44,9 +44,9 @@ class _registrarState extends State<registrar> {
               key: formKey,
               child: Column(
                 children: [
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Image.asset(
                       "lib/img/logo.png",
                       width: 200,
@@ -55,10 +55,10 @@ class _registrarState extends State<registrar> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     child: TextFormField(
                       controller: nomeCadastro,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "Nome completo",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.person),
@@ -76,10 +76,10 @@ class _registrarState extends State<registrar> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     child: TextFormField(
                       controller: nomeEmpresa,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "Nome da sua empresa",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.business),
@@ -97,10 +97,10 @@ class _registrarState extends State<registrar> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     child: TextFormField(
                       controller: emailCadastro,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "Email",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.email),
@@ -123,10 +123,10 @@ class _registrarState extends State<registrar> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     child: TextFormField(
                       controller: telefoneCadastro,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "Telefone",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.phone),
@@ -148,10 +148,10 @@ class _registrarState extends State<registrar> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     child: TextFormField(
                       controller: CNPJ,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "CNPJ",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.business),
@@ -173,14 +173,14 @@ class _registrarState extends State<registrar> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     child: TextFormField(
                       controller: senhaCadastro,
                       obscureText: senhapasse ? true : false,
                       decoration: InputDecoration(
                         labelText: "senha",
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.lock),
+                        border: const OutlineInputBorder(),
+                        prefixIcon: const Icon(Icons.lock),
                         suffixIcon: InkWell(
                           onTap: () {
                             if (senhapasse == true) {
@@ -191,8 +191,8 @@ class _registrarState extends State<registrar> {
                             setState(() {});
                           },
                           child: senhapasse
-                              ? Icon(Icons.remove_red_eye_outlined)
-                              : Icon(Icons.remove_red_eye_rounded),
+                              ? const Icon(Icons.remove_red_eye_outlined)
+                              : const Icon(Icons.remove_red_eye_rounded),
                         ),
                       ),
                       //
@@ -211,13 +211,13 @@ class _registrarState extends State<registrar> {
                       },
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: SizedBox(
                       width: double.infinity,
                       child: Material(
-                        color: Color(0xFF7165d6),
+                        color: const Color(0xFF7165d6),
                         borderRadius: BorderRadius.circular(10),
                         child: InkWell(
                           onTap: () {
@@ -233,7 +233,7 @@ class _registrarState extends State<registrar> {
                               );
                             }
                           },
-                          child: Padding(
+                          child: const Padding(
                             padding: EdgeInsets.symmetric(
                                 vertical: 15, horizontal: 40),
                             child: Center(
@@ -251,11 +251,11 @@ class _registrarState extends State<registrar> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Já possui uma conta?",
                         style: TextStyle(
                           fontSize: 16,
@@ -270,7 +270,7 @@ class _registrarState extends State<registrar> {
                             'login',
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           "Logar",
                           style: TextStyle(
                               fontSize: 17,

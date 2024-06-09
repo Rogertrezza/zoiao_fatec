@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class inicial extends StatelessWidget {
+  const inicial({super.key});
+
   @override
 
   Widget build(BuildContext context) {
@@ -8,15 +10,15 @@ class inicial extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Image.asset(
                 "lib/img/logo.png",
                 width: 200,
@@ -24,8 +26,8 @@ class inicial extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "Aplicativo ZOIAO",
               style: TextStyle(
                   color: Color(0xFF7165d6),
@@ -34,20 +36,20 @@ class inicial extends StatelessWidget {
                   letterSpacing: 1,
                   wordSpacing: 2),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               "Seu aplicativo para ajudar no gerenciamento da sua empresa de oculos",
               style: TextStyle(
                   color: Colors.black54,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Material(
-                  color: Color(0xFF7165d6),
+                  color: const Color(0xFF7165d6),
                   borderRadius: BorderRadius.circular(10),
                   child: InkWell(
                     onTap: () {
@@ -56,7 +58,7 @@ class inicial extends StatelessWidget {
                         'login',
                       );
                     },
-                    child: Padding(
+                    child: const Padding(
                       padding:
                           EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                       child: Text(
@@ -71,7 +73,7 @@ class inicial extends StatelessWidget {
                   ),
                 ),
                 Material(
-                  color: Color(0xFF7165d6),
+                  color: const Color(0xFF7165d6),
                   borderRadius: BorderRadius.circular(10),
                   child: InkWell(
                     onTap: () {
@@ -80,7 +82,7 @@ class inicial extends StatelessWidget {
                         'registrar',
                       );
                     },
-                    child: Padding(
+                    child: const Padding(
                       padding:
                           EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                       child: Text(

@@ -25,7 +25,7 @@ Future<void> main() async {
   runApp(
     DevicePreview(
       enabled: true,
-      builder: (context) => MainApp(),
+      builder: (context) => const MainApp(),
     ),
   );
 }
@@ -41,12 +41,12 @@ class MainApp extends StatelessWidget {
       //Rotas de navegação
       initialRoute: 'inicial',
       routes: {
-        'inicial': (context) => inicial(),
-        'login': (context) => login(),
-        'registrar' : (context) => registrar(),
-        'PrincipalView':(context) => PrincipalView(),
-        'navBar': (context) => navBar(),
-        'sobre':(context) => sobre(),
+        'inicial': (context) => const inicial(),
+        'login': (context) => const login(),
+        'registrar' : (context) => const registrar(),
+        'PrincipalView':(context) => const PrincipalView(),
+        'navBar': (context) => const navBar(),
+        'sobre':(context) => const sobre(),
       },
     );
   }

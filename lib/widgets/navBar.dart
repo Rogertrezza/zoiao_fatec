@@ -8,7 +8,7 @@ import 'package:zoiao/view/cadastrarOculos.dart';
 import 'package:zoiao/view/opcoes.dart';
 
 class navBar extends StatefulWidget {
-  const navBar({Key? key}) : super(key: key);
+  const navBar({super.key});
 
   @override
   State<navBar> createState() => _navBarState();
@@ -18,11 +18,11 @@ class _navBarState extends State<navBar> {
   int _selectedIndex = 0;
 
   final _screens = [
-    PrincipalView(), // Pagina vendas,
-    cadastrarCliente(), // Cadastrar cliente
-    cadastrarOculos(), // Cadastrar Oculos
-    BuscaPage(), // PAgina de Buscar
-    opcoes(), // Pagina responsavel por configurar o usuario
+    const PrincipalView(), // Pagina vendas,
+    const cadastrarCliente(), // Cadastrar cliente
+    const cadastrarOculos(), // Cadastrar Oculos
+    const BuscaPage(), // PAgina de Buscar
+    const Opcoes(), // Pagina responsavel por configurar o usuario
   ];
 
   @override
@@ -30,14 +30,14 @@ class _navBarState extends State<navBar> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: _screens[_selectedIndex],
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 110,
         child: BottomNavigationBar(
           backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Color(0xFF7165d6),
+          selectedItemColor: const Color(0xFF7165d6),
           unselectedItemColor: Colors.black26,
-          selectedLabelStyle: TextStyle(
+          selectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 15,
           ),
@@ -47,7 +47,7 @@ class _navBarState extends State<navBar> {
               _selectedIndex = index;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.point_of_sale),
               label: "Venda",

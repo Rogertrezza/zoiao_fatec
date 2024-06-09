@@ -1,6 +1,5 @@
 import 'package:zoiao/model/busca.dart';
 
-import 'package:flutter/material.dart';
 
 // Firebase
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -37,20 +36,20 @@ class BuscaController {
   //
   // Listar Oculos
   //
-  listarOculos(context, codigo_oculos) {
+  listarOculos(context, codigoOculos) {
     return FirebaseFirestore.instance
         .collection('cliente')
-        .where('codigo_oculos', isEqualTo: codigo_oculos)
+        .where('codigo_oculos', isEqualTo: codigoOculos)
         .where('uid', isEqualTo: LoginController().idUsuario());
   }
 
   //
   // Listar Vendas
   //
-  listarVendas(context, nota_fiscal) {
+  listarVendas(context, notaFiscal) {
     return FirebaseFirestore.instance
         .collection('cliente')
-        .where('nota_fiscal', isEqualTo: nota_fiscal)
+        .where('nota_fiscal', isEqualTo: notaFiscal)
         .where('uid', isEqualTo: LoginController().idUsuario());
   }
 
