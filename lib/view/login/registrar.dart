@@ -230,7 +230,10 @@ class _registrarState extends State<registrar> {
                                 nomeCadastro.text,
                                 emailCadastro.text,
                                 senhaCadastro.text,
-                              );
+                                nomeEmpresa.text,
+                                telefoneCadastro.text,
+                                CNPJ.text,
+                                );
                             }
                           },
                           child: const Padding(

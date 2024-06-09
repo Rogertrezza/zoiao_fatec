@@ -18,11 +18,11 @@ class _navBarState extends State<navBar> {
   int _selectedIndex = 0;
 
   final _screens = [
-    const PrincipalView(), // Pagina vendas,
-    const cadastrarCliente(), // Cadastrar cliente
-    const cadastrarOculos(), // Cadastrar Oculos
-    const BuscaPage(), // PAgina de Buscar
-    const Opcoes(), // Pagina responsavel por configurar o usuario
+    PrincipalView(), // Pagina vendas,
+    cadastrarCliente(), // Cadastrar cliente
+    cadastrarOculos(), // Cadastrar Oculos
+    BuscaPage(), // PAgina de Buscar
+    opcoes(), // Pagina responsavel por configurar o usuario
   ];
 
   @override

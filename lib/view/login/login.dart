@@ -65,8 +65,7 @@ class _loginState extends State<login> {
     return Scaffold(
       key: scaffoldKey, // Atribuição da scaffoldKey ao Scaffold
       appBar: AppBar(
-        title: const Text("Tela de login"),
-        automaticallyImplyLeading: false,
+        title: Text("Tela de login"),
       ),
       body: Material(
         color: Colors.white,

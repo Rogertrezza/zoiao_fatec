@@ -61,7 +61,7 @@ class _BuscaPageState extends State<BuscaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Busca'),
+        title: Text('Busca'),
         actions: [
           IconButton(
             icon: const Icon(Icons.filter_list),
